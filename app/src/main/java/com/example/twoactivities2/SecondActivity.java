@@ -1,9 +1,10 @@
-package com.example.twoactivities1;
+package com.example.twoactivities2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,7 +13,7 @@ public class SecondActivity extends AppCompatActivity {
     public static final String EXTRA_REPLY =
             "com.example.android.twoactivities.extra.REPLY";
     private EditText mReply;
-
+    private static final String LOG_TAG = SecondActivity.class.getSimpleName();
 
 
     @Override
@@ -30,7 +31,8 @@ public class SecondActivity extends AppCompatActivity {
         String reply = mReply.getText().toString();
         Intent replyIntent = new Intent();
         replyIntent.putExtra(EXTRA_REPLY, reply);
-        setResult(RESULT_OK,replyIntent);
+        setResult(RESULT_OK,replyIntent);b
+        Log.d(LOG_TAG, "End SecondActivity");
         finish();
     }
 }
